@@ -1,0 +1,115 @@
+[
+  {
+    "traj_id": "clean_valid",
+    "pruned": false,
+    "prune_step": null,
+    "raw_score": 0.96,
+    "defended_score": 0.96,
+    "filler_steps": [],
+    "split_steps": [],
+    "tokens_total": 20,
+    "tokens_saved": 0,
+    "reason": ""
+  },
+  {
+    "traj_id": "clean_with_one_remark",
+    "pruned": false,
+    "prune_step": null,
+    "raw_score": 0.964,
+    "defended_score": 0.816,
+    "filler_steps": [
+      1
+    ],
+    "split_steps": [],
+    "tokens_total": 30,
+    "tokens_saved": 0,
+    "reason": ""
+  },
+  {
+    "traj_id": "plain_flawed",
+    "pruned": true,
+    "prune_step": 2,
+    "raw_score": 0.4337,
+    "defended_score": 0.4337,
+    "filler_steps": [],
+    "split_steps": [],
+    "tokens_total": 20,
+    "tokens_saved": 10,
+    "reason": "r_PRM=0.196 < tau_horizon=0.35"
+  },
+  {
+    "traj_id": "atk1_filler_padding",
+    "pruned": true,
+    "prune_step": 2,
+    "raw_score": 0.7073,
+    "defended_score": 0.1636,
+    "filler_steps": [
+      1,
+      2
+    ],
+    "split_steps": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "tokens_total": 60,
+    "tokens_saved": 44,
+    "reason": "r_PRM=0.000 < tau_horizon=0.35"
+  },
+  {
+    "traj_id": "atk1_flattery_on_wrong_step",
+    "pruned": true,
+    "prune_step": 2,
+    "raw_score": 0.9143,
+    "defended_score": 0.3967,
+    "filler_steps": [
+      2
+    ],
+    "split_steps": [],
+    "tokens_total": 26,
+    "tokens_saved": 10,
+    "reason": "r_PRM=0.164 < tau_horizon=0.35"
+  },
+  {
+    "traj_id": "atk2_duplicate_splitting",
+    "pruned": true,
+    "prune_step": 8,
+    "raw_score": 0.7191,
+    "defended_score": 0.139,
+    "filler_steps": [],
+    "split_steps": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "tokens_total": 55,
+    "tokens_saved": 15,
+    "reason": "r_PRM=0.308 < tau_horizon=0.35"
+  },
+  {
+    "traj_id": "atk2_fragment_splitting",
+    "pruned": true,
+    "prune_step": 8,
+    "raw_score": 0.7315,
+    "defended_score": 0.1182,
+    "filler_steps": [],
+    "split_steps": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "tokens_total": 28,
+    "tokens_saved": 16,
+    "reason": "r_PRM=0.308 < tau_horizon=0.35"
+  }
+]

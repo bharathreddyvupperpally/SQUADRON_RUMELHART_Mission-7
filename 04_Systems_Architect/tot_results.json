@@ -1,0 +1,112 @@
+[
+  {
+    "budget": 10,
+    "method": "ToT-BFS",
+    "success": false,
+    "expansions": 10,
+    "generated": 50,
+    "pruned": 2,
+    "backtracks": 0,
+    "depth": 4,
+    "best_value": 0.934
+  },
+  {
+    "budget": 10,
+    "method": "ToT-DFS",
+    "success": false,
+    "expansions": 10,
+    "generated": 50,
+    "pruned": 6,
+    "backtracks": 17,
+    "depth": 4,
+    "best_value": 0.934
+  },
+  {
+    "budget": 20,
+    "method": "ToT-BFS",
+    "success": true,
+    "expansions": 12,
+    "generated": 60,
+    "pruned": 2,
+    "backtracks": 0,
+    "depth": 5,
+    "best_value": 1.0
+  },
+  {
+    "budget": 20,
+    "method": "ToT-DFS",
+    "success": false,
+    "expansions": 20,
+    "generated": 100,
+    "pruned": 12,
+    "backtracks": 48,
+    "depth": 4,
+    "best_value": 0.934
+  },
+  {
+    "budget": 40,
+    "method": "ToT-BFS",
+    "success": true,
+    "expansions": 12,
+    "generated": 60,
+    "pruned": 2,
+    "backtracks": 0,
+    "depth": 5,
+    "best_value": 1.0
+  },
+  {
+    "budget": 40,
+    "method": "ToT-DFS",
+    "success": false,
+    "expansions": 40,
+    "generated": 200,
+    "pruned": 18,
+    "backtracks": 110,
+    "depth": 4,
+    "best_value": 0.934
+  },
+  {
+    "budget": 60,
+    "method": "ToT-BFS",
+    "success": true,
+    "expansions": 12,
+    "generated": 60,
+    "pruned": 2,
+    "backtracks": 0,
+    "depth": 5,
+    "best_value": 1.0
+  },
+  {
+    "budget": 60,
+    "method": "ToT-DFS",
+    "success": true,
+    "expansions": 58,
+    "generated": 290,
+    "pruned": 19,
+    "backtracks": 161,
+    "depth": 5,
+    "best_value": 1.0
+  },
+  {
+    "budget": 80,
+    "method": "ToT-BFS",
+    "success": true,
+    "expansions": 12,
+    "generated": 60,
+    "pruned": 2,
+    "backtracks": 0,
+    "depth": 5,
+    "best_value": 1.0
+  },
+  {
+    "budget": 80,
+    "method": "ToT-DFS",
+    "success": true,
+    "expansions": 58,
+    "generated": 290,
+    "pruned": 19,
+    "backtracks": 161,
+    "depth": 5,
+    "best_value": 1.0
+  }
+]

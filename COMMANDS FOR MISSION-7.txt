@@ -1,0 +1,58 @@
+COMMANDS FOR MISSION-7  (Git Bash / terminal)  -  Squad RUMELHART
+==================================================================
+Python 3.9+ only. No installs are needed for the code or tests.
+Type the commands by hand if pasting adds odd characters.
+
+0. OPEN THE REPOSITORY FOLDER
+   cd /c/path/to/SQUADRON_RUMELHART_Mission-7
+
+1. RUN EACH STATION (each command from the repository root)
+   (cd 01_Data_Specialist     && python evaluation_demo.py)
+   (cd 02_Protocol_Specialist && python mcts_protocol.py)
+   (cd 03_Security_Sentinel   && python anomaly_07_demo.py)
+   (cd 04_Systems_Architect   && python tot_solver.py)
+   (cd 04_Systems_Architect   && python run_mission.py)      # integrated run, ~3 s
+
+   Also available:
+   (cd 01_Data_Specialist     && python prm_evaluator.py)
+   (cd 03_Security_Sentinel   && python horizon_pruner.py)
+
+2. RUN ALL UNIT TESTS (45 tests)
+   (cd 01_Data_Specialist     && python test_prm_evaluator.py)
+   (cd 02_Protocol_Specialist && python test_mcts_protocol.py)
+   (cd 03_Security_Sentinel   && python test_horizon_pruner.py)
+   (cd 04_Systems_Architect   && python test_tot_solver.py)
+   (cd 04_Systems_Architect   && python test_integration.py)
+
+   One-liner for all of them:
+   for t in 01_Data_Specialist/test_prm_evaluator.py 02_Protocol_Specialist/test_mcts_protocol.py 03_Security_Sentinel/test_horizon_pruner.py 04_Systems_Architect/test_tot_solver.py 04_Systems_Architect/test_integration.py; do (cd "$(dirname $t)" && python "$(basename $t)" 2>&1 | tail -3); done
+
+3. NOTEBOOK (optional; needs: pip install -r requirements.txt)
+   jupyter notebook ps07_solution.ipynb      # run from the repository root
+
+4. DIAGRAM (optional; needs Graphviz)
+   dot -Tpng 04_Systems_Architect/architecture_diagram.dot -o architecture.png
+
+5. PUSH TO GITHUB
+   git init
+   git add .
+   git commit -m "Mission-07: ToT, MCTS+PUCT, PRM, Event Horizon Pruner, report"
+   git branch -M main
+   git remote add origin https://github.com/<your-user>/<your-repo>.git
+   git push -u origin main
+
+   If the push is rejected because the remote already has files:
+   git pull origin main --rebase --allow-unrelated-histories
+   (README conflict: git checkout --theirs README.md ; git add README.md ;
+    GIT_EDITOR=true git rebase --continue)
+   git push -u origin main
+
+   Replace a file later (e.g. the report PDF):
+   git add SQUADRON_RUMELHART-MISSION-7_FINAL_REPORT.pdf
+   git commit -m "Update report PDF"
+   git push
+
+6. MOODLE
+   Upload SQUADRON_RUMELHART-MISSION-7_FINAL_REPORT.pdf 
+   (rename it to mission-07-doc.pdf if the Moodle drop-box expects that name)
+   and paste the GitHub repository link in Tab 4.

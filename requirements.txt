@@ -1,0 +1,6 @@
+# Mission-07 uses only the Python standard library (3.9+).
+# Nothing to install to run the code or the tests.
+#
+# Only needed to open/re-run the notebook ps07_solution.ipynb:
+jupyter
+nbformat

@@ -1,0 +1,22 @@
+// Integrated TTC architecture.  Render:  dot -Tpng architecture_diagram.dot -o architecture.png
+digraph TTC {
+  rankdir=TB; node [shape=box, style="rounded,filled", fontname="Helvetica"];
+  query   [label="AURA navigation query\nstart=2, target=61", fillcolor="#dbeafe"];
+  policy  [label="LLM policy / proposer\n(hallucinates with prob h)", fillcolor="#dbeafe"];
+  tot     [label="TreeOfThoughtsSolver\nBFS beam B / DFS backtrack\nhard max_expansions\n(04_Systems_Architect)", fillcolor="#ede9fe"];
+  mcts    [label="MCTSEngine\nSelect(PUCT) - Expand - Simulate - Backprop\n(02_Protocol_Specialist)", fillcolor="#ede9fe"];
+  prm     [label="ProcessRewardEvaluator\nstep scores, min/prod/geo-mean\nORM traps, Math-Shepherd\n(01_Data_Specialist)", fillcolor="#ede9fe"];
+  pruner  [label="EventHorizonPruner\nsanitize filler + step splitting\nsever if r_PRM < tau_horizon\n(03_Security_Sentinel)", fillcolor="#ede9fe"];
+  out     [label="Verified trajectory\n(claimed goal AND every step valid)", fillcolor="#dcfce7"];
+  log     [label="pruned_branches_log.json\n(pruned branches, tokens saved)", fillcolor="#dcfce7"];
+  query -> policy;
+  policy -> tot  [label="candidate thoughts"];
+  policy -> mcts [label="thoughts + priors"];
+  tot -> pruner  [label="node path as steps"];
+  pruner -> tot  [label="prune_fn: sever branch"];
+  pruner -> prm  [label="step scores"];
+  mcts -> prm    [label="priors x PRM, rollout gate"];
+  prm -> mcts    [label="shaped priors / rewards"];
+  tot -> out; mcts -> out;
+  pruner -> log  [style=dashed];
+}
